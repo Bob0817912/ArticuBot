@@ -107,7 +107,7 @@ Assume you have downloaded the needed evaluation files following the above instr
 We provide pretrained high-level and low-level ckpts through this [google drive link](https://drive.google.com/drive/folders/1lbpoo8SqNuLWTjMyvO5RWnBd0XpGq6C4?usp=sharing):
 
 The low-level policy ckpt is named `low-level-ckpt.zip`. Unzip it to `data/low-level-ckpt`.  
-The high-level policy ckpt is named `high_level_300_obj_ckpt.pth`. Download and put it to `data/high_level_300_obj_ckpt.pth`.
+The high-level policy ckpt is named `high_level_200_obj_ckpt.pth`. Download and put it to `data/high_level_200_obj_ckpt.pth`.
 
 To evaluate a trained high and low-level policy:
 ```
