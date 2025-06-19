@@ -75,9 +75,8 @@ All datasets we use can be downloaded from this [google drive link](https://driv
 
 - We use [PartNet-Mobility](https://sapien.ucsd.edu/browse) as our simulation assets. We provide a parsed version in the above google drive link, named `dataset.zip`. After downloading, unzip it to `data/dataset`.
 - The high-level policy training dataset is named `dp3_demo.zip`. Unzip it to `data/dp3_demo`. 
-- The high-level policy training dataset is named `dp3_demo_combined_2_step_0.zip`. Unzip it to `data/dp3_demo_combined_2_step_0`.  
-- Some files will also be needed for running evaluation (the simulator init states). 
-They are named `diverse_objects.zip`. Unzip it to `data/diverse_objects`.
+- The low-level policy training dataset is named `dp3_demo_combined_2_step_0.zip`. Unzip it to `data/dp3_demo_combined_2_step_0`.  
+- Some files will also be needed for running evaluation (the simulator init states). They are named `diverse_objects.zip`. Unzip it to `data/diverse_objects`.
 
 You can run `python scripts/visualization_scripts/check_data.py` to visualize the stored datasets. 
 
