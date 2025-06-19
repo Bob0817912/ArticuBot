@@ -112,7 +112,7 @@ The high-level policy ckpt is named `high_level_300_obj_ckpt.pth`. Download and 
 To evaluate a trained high and low-level policy:
 ```
 source prepare.sh
-bash scripts/weighted-displacement-high-level/eval-weighted-displacement-high-level.sh
+bash scripts/eval.sh
 ```
 The evaluation results will be saved at `3d_diffusion_policy/3D-Diffusion-Policy/3D-Diffusion-Policy/data/`.
 
