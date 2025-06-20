@@ -21,8 +21,8 @@ exp_name="test-cleaned-low-level-code"
 action_dim=10
 agent_pos_dim=10
 
-### can be 10_low_level, 100_low_level, etc. See "get_zarry_paths" in 3d_diffusion_policy/3D-Diffusion-Policy/3D-Diffusion-Policy/diffusion_policy_3d/dataset/robogen_dataset.py for all options. 
-num_train_objects=50_low_level
+### can be 10_object_low_level, 100_object_low_level, etc. See "get_zarry_paths" in 3d_diffusion_policy/3D-Diffusion-Policy/3D-Diffusion-Policy/diffusion_policy_3d/dataset/robogen_dataset.py for all options. 
+num_train_objects=50_object_low_level
 
 torchrun --standalone --nproc_per_node=1 \
     train_ddp.py --config-name=dp3.yaml task=robogen_open_door exp_name="${exp_name}"  \

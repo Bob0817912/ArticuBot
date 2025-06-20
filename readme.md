@@ -88,17 +88,18 @@ For training the high-level policy:
 source prepare.sh
 bash scripts/weighted-displacement-high-level/train-weighted-displacement.sh
 ```
-Change `num_train_objects` in this script for training with different number of objects. 
-The training logs for the low-level policy will be at `3d_diffusion_policy/3D-Diffusion-Policy/3D-Diffusion-Policy/data/`
-
+Change `num_train_objects` in this script for training with different number of objects (default value: 50 objects). 
+The training logs for the high-level policy will be at `weighted_displacement_model/exps/`.
+You can find an example training log for the high-level policy (with 50 objects) in this wandb space: https://wandb.ai/marswang/articubot-high-level-weighted-displacement?nw=nwusermarswang
 
 For training the low-levle policy:
 ```
 source prepare.sh
 bash scripts/low-level/train_unet_diffusion_low_level.sh
 ```
-Change `num_train_objects` in the script for training with different number of objects. 
-The training logs for the high-level policy will be at `weighted_displacement_model/exps/`
+Change `num_train_objects` in the script for training with different number of objects (default and recommended value: 50 objects). 
+The training logs for the low-level policy will be at `3d_diffusion_policy/3D-Diffusion-Policy/3D-Diffusion-Policy/data/`
+You can find an example training log for the low-level policy in this wandb space: https://wandb.ai/marswang/articubot_dp3_low_level?nw=nwusermarswang
 
 
 ## Evaluate trained policies
@@ -114,9 +115,10 @@ To evaluate a trained high and low-level policy:
 source prepare.sh
 bash scripts/eval.sh
 ```
-The evaluation results will be saved at `3d_diffusion_policy/3D-Diffusion-Policy/3D-Diffusion-Policy/data/`.
+The evaluation results (including gifs of rollouts and normalized opening performances of each rollout) will be saved at `3d_diffusion_policy/3D-Diffusion-Policy/3D-Diffusion-Policy/data/`.
 
 To print the quantitive numbers, you can run `python scripts/print_eval_results.py --d your_eval_run_results_dir`
+By using the provided pretrained policy ckpts, you are expected to get a performance around 0.68 (averaged over 10 test objects, each with 25 test trials. Each trial has different object pose/robot initial joint angle). 
 
 ## Demonstration generation
 We are currently in the process of cleaning the data generation code, so stay tuned!
