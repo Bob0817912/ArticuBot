@@ -121,24 +121,13 @@ To print the quantitive numbers, you can run `python scripts/print_eval_results.
 By using the provided pretrained policy ckpts, you are expected to get a performance around 0.68 (averaged over 10 test objects, each with 25 test trials. Each trial has different object pose/robot initial joint angle). 
 
 ## Demonstration generation
-We are currently in the process of cleaning the data generation code, so stay tuned!
-
-### Open Motion Planning Library (OMPL) for demonstration generation
-OMPL is only needed for generating the training demonstrations. It is not needed for training the policy.
-
-If your system is ubuntu 20.04 or higher, use the prebuilt wheels for python 3.9: https://drive.google.com/file/d/1dGiq8_CqIPFWqjqyXJzT7yp2z0PVLEdX/view?usp=sharing (See https://github.com/ompl/ompl/releases/tag/prerelease for more wheels for different python versions). Run `pip install your_downloaded_ompl_wheel` to install the library (do this in the articubot conda env). 
-
-If your system is ubuntu 18.04, to install OMPL, run
+We provide the data generation code in a different branch: `gen_demo`.  
+Do 
 ```
-cd scripts
-./install_ompl_1.5.2.sh --python
+git fetch origin
+git checkout -b gen_demo origin/gen_demo
 ```
-which will install the ompl with system-wide python. Note at line 19 of the installation script OMPL requries you to run `sudo apt-get -y upgrade`. A successful installation will take 5-6 hours. If not, that means your installtaion is not complete. If the installation is not complete, try installing by running the commands in install_ompl_1.5.2.sh line by line. 
-Then, export the installation to the conda environment to be used with ArticuBot:
-```
-echo "path_to_your_ompl_installation_from_last_step/OMPL/ompl-1.5.2/py-bindings" >> ~/miniconda3/envs/articubot/lib/python3.9/site-packages/ompl.pth
-```
-remember to change the path to be your ompl installed path and conda environment path.
+And then follow the instructions in the readme of the `gen_demo` branch for demonstration generation. 
 
 
 ## Acknowledgement
